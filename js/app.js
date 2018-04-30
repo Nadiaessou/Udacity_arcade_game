@@ -77,15 +77,18 @@ Player.prototype.update = function(dt) {
         player.sprite = 'images/boy3.png';
     }
 
-    if (object.x === 700 && object.y === 700 && 
-        object2.x === 700 && object2.y === 700 &&
-        object3.x === 700 && object3.y === 700 &&
+    if (object.x === 420 && object.y === 496 && 
+        object2.x === 475 && object2.y === 496 &&
+        object3.x === 520 && object3.y === 496 &&
         this.y < 0) {
         this.y = -60;
         player.sprite = 'images/boy-win.png';
         Player.prototype.handleInput = function(keyPress) {
             return false;
         }
+      setTimeout(function(){ 
+            document.location.reload(true);
+        }, 3200);
     }
 };
 
@@ -143,8 +146,9 @@ Object.prototype.render = function() {
 
 // Hide the object off canvas
 Object.prototype.collision = function() {
-    this.x = 700;
-    this.y = 700;
+    this.x = 420;
+    this.y = 496;
+    this.sprite = 'images/object1.1.png';
 };
 
 
@@ -176,8 +180,9 @@ Object2.prototype.render = function() {
 
 // Hide the object 2 off canvas
 Object2.prototype.collision = function() {
-    this.x = 700;
-    this.y = 700;
+    this.x = 475;
+    this.y = 496;
+    this.sprite = 'images/object2.2.png';
 };
 
 
@@ -209,9 +214,11 @@ Object3.prototype.render = function() {
 
 // Hide the object 3 off canvas
 Object3.prototype.collision = function() {
-    this.x = 700;
-    this.y = 700;
+    this.x = 520;
+    this.y = 496;
+    this.sprite = 'images/object3.3.png';
 };
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -241,7 +248,7 @@ document.addEventListener('keyup', function(e) {
         37: 'left',
         38: 'up',
         39: 'right',
-        40: 'down'
+        40: 'down',
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
