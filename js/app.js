@@ -84,8 +84,19 @@ Player.prototype.update = function(dt) {
         this.y = -60;
         player.sprite = 'images/boy-win.png';
       setTimeout(function(){ 
-        document.location.reload(true);
-        }, 1000);
+        player.x = 200;
+        player.y = 400;
+        object.x = 300;
+        object.y = 73;
+        object2.x = 100;
+        object2.y = 240;
+        object3.x = 500;
+        object3.y = 150;
+        object.sprite = 'images/object1.png';
+        object2.sprite = 'images/object2.png';
+        object3.sprite = 'images/object3.png';
+        player.sprite = 'images/boy-start.png';
+        }, 3000);
     }
 };
 
