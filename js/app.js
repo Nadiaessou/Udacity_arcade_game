@@ -83,12 +83,9 @@ Player.prototype.update = function(dt) {
         this.y < 0) {
         this.y = -60;
         player.sprite = 'images/boy-win.png';
-        Player.prototype.handleInput = function(keyPress) {
-        return false;
-        }
       setTimeout(function(){ 
-            document.location.reload(true);
-        }, 3200);
+        document.location.reload(true);
+        }, 1000);
     }
 };
 
