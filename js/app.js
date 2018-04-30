@@ -96,7 +96,7 @@ Player.prototype.update = function(dt) {
         object2.sprite = 'images/object2.png';
         object3.sprite = 'images/object3.png';
         player.sprite = 'images/boy-start.png';
-        }, 3000);
+        }, 2000);
     }
 };
 
