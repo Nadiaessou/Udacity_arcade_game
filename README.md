@@ -1,6 +1,20 @@
-frontend-nanodegree-arcade-game
-===============================
+# Memory Game Project
+Udacity Front-End Web Developer Nanodegree Project: Arcade Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## How The Game Works
+The goal is to collect all the accessories and to reach the beach without colliding into cars.
+You can move left, right, up and down with the keyboard arrows.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+You can play the game here : https://nadiaessou.github.io/project-arcade-game/
+
+## Resources used to create the game:
+Starter code of Udacity students
+HTML
+CSS
+Canvas
+Object Oriented JavaScript
+Pictures from Freepik (https://fr.freepik.com/) and retouched by me with Photoshop
+Help : 
+https://www.w3schools.com/
+https://developer.mozilla.org/fr/
+https://discussions.udacity.com/
