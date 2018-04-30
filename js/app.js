@@ -35,7 +35,7 @@ Enemy.prototype.update = function(dt) {
         player.x = 200;
         player.y = 400;
         player.sprite = 'images/boy.png';
-        }, 400);
+        }, 500);
     };
 };
 
@@ -56,7 +56,7 @@ var Player = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.sprite = 'images/boy.png';
+    this.sprite = 'images/boy-start.png';
 };
 
 Player.prototype.update = function(dt) {
@@ -84,7 +84,7 @@ Player.prototype.update = function(dt) {
         this.y = -60;
         player.sprite = 'images/boy-win.png';
         Player.prototype.handleInput = function(keyPress) {
-            return false;
+        return false;
         }
       setTimeout(function(){ 
             document.location.reload(true);
@@ -96,27 +96,25 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+
 Player.prototype.handleInput = function(keyPress) {
-    switch (keyPress) {
-        case 'left':
-            this.x -= this.speed + 50;
-            this.sprite = 'images/boy-left.png';
-            break;
-        case 'up':
-            this.y -= this.speed + 27;
-            this.sprite = 'images/boy-up.png';
-            break;
-        case 'right':
-            this.x += this.speed + 50;
-            this.sprite = 'images/boy-right.png';
-            break;
-        case 'down':
-            this.y += this.speed + 27;
-            this.sprite = 'images/boy.png';
-            break;
+    if(keyPress === 'left') {
+        this.x -= this.speed + 50;
+        this.sprite = 'images/boy-left.png';
+    }
+    if(keyPress === 'right') {
+        this.x += this.speed + 50;
+        this.sprite = 'images/boy-right.png';
+    }
+    if(keyPress === 'up') {
+        this.y -= this.speed + 27;
+        this.sprite = 'images/boy-up.png';
+    }
+    if(keyPress === 'down') {
+        this.y += this.speed + 27;
+        this.sprite = 'images/boy.png';
     }
 };
-
 
 /////////////////////////////// OBJECT1 //////////////////////////////////////////////////////////
 

@@ -25,7 +25,7 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 606;
-    canvas.height = 610;
+    canvas.height = 800;
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -185,6 +185,7 @@ var Engine = (function(global) {
         'images/boy-left.png',
         'images/boy-right.png',
         'images/boy-up.png',
+        'images/boy-start.png',
         'images/boy.png',
         'images/boy2.png',
         'images/boy3.png',
