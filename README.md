@@ -19,5 +19,5 @@ Pictures from Freepik (https://fr.freepik.com/) and retouched by me with Photosh
 Help :  
 https://www.w3schools.com/  
 https://developer.mozilla.org/fr/  
-https://discussions.udacity.com/
+https://discussions.udacity.com/  
 Udacity Course "HTML5 Canvas"
