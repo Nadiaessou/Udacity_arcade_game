@@ -135,7 +135,7 @@ Player.prototype.win = function() {
         object2.sprite = 'images/object2.png';
         object3.sprite = 'images/object3.png';
         player.sprite = 'images/boy-start.png';
-    }, 1500);
+    }, 900);
 };
 
 /////////////////////////////// ARROWS BUTTON //////////////////////////////////////////////////////////
