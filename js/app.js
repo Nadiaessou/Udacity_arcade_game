@@ -1,5 +1,4 @@
 /////////////////////////////// ENEMY //////////////////////////////////////////////////////////
-
 // List of cars
 var listOfCars = ['images/car2.png', 'images/car1.png', 'images/car3.png']
 
@@ -30,10 +29,10 @@ Enemy.prototype.update = function(dt) {
 
     // check collision and play alert
     if (player.x < this.x + 90 &&
-    player.x + 30 > this.x &&
-    player.y < this.y + 20 &&
-    player.y + 30 > this.y) {
-    this.collision();
+        player.x + 30 > this.x &&
+        player.y < this.y + 20 &&
+        player.y + 30 > this.y) {
+        this.collision();
     };
 };
 
@@ -46,12 +45,12 @@ Enemy.prototype.render = function(dt) {
 
 // Restart the game after winning
 Enemy.prototype.collision = function() {
-        player.sprite = 'images/boy2.png';
-        setTimeout (function () {
+    player.sprite = 'images/boy2.png';
+    setTimeout(function() {
         player.x = 200;
         player.y = 400;
         player.sprite = 'images/boy.png';
-        }, 500);
+    }, 500);
 };
 
 /////////////////////////////// PLAYER //////////////////////////////////////////////////////////
@@ -80,15 +79,15 @@ Player.prototype.update = function(dt) {
         this.y = 380;
     }
 
-    if (this.y < -5) {
-        this.y = -5;
+    if (this.y < -7) {
+        this.y = -7;
         player.sprite = 'images/boy3.png';
     }
 
-    if (object.x === 420 && object.y === 496 && 
+    if (object.x === 420 && object.y === 496 &&
         object2.x === 475 && object2.y === 496 &&
         object3.x === 520 && object3.y === 496 &&
-        this.y < 0) {
+        this.y < -6) {
         this.win();
     }
 };
@@ -99,33 +98,33 @@ Player.prototype.render = function() {
 
 
 Player.prototype.handleInput = function(keyPress) {
-          switch (keyPress) {
-              case 'left':
-                  this.x -= this.speed + 50;
-                  this.sprite = 'images/boy-left.png';
-                  break;
-              case 'right':
-                  this.x += this.speed + 50;
-                  this.sprite = 'images/boy-right.png';
-                  break;
-              case 'up':
-                  this.y -= this.speed + 27;
-                  this.sprite = 'images/boy-up.png';
-                  break;
-              case 'down':
-                  this.y += this.speed + 27;
-                  this.sprite = 'images/boy.png';
-                  break;
-          }
+    switch (keyPress) {
+        case 'left':
+            this.x -= this.speed + 50;
+            this.sprite = 'images/boy-left.png';
+            break;
+        case 'right':
+            this.x += this.speed + 50;
+            this.sprite = 'images/boy-right.png';
+            break;
+        case 'up':
+            this.y -= this.speed + 27;
+            this.sprite = 'images/boy-up.png';
+            break;
+        case 'down':
+            this.y += this.speed + 27;
+            this.sprite = 'images/boy.png';
+            break;
+    }
 };
 
 // Restart the game after winning
 Player.prototype.win = function() {
-        this.y = -60;
-        player.sprite = 'images/boy-win.png';
-        setTimeout(function(){ 
+    this.y = -60;
+    player.sprite = 'images/boy-win.png';
+    setTimeout(function() {
         window.location.reload()
-        }, 2500);
+    }, 2500);
 };
 
 /////////////////////////////// ARROWS BUTTON //////////////////////////////////////////////////////////
@@ -161,7 +160,7 @@ var Object = function(x, y) {
 
 // Check for collisions between player and object 1
 Object.prototype.update = function() {
-    
+
     if (player.x < this.x + 90 &&
         player.x + 30 > this.x &&
         player.y < this.y + 20 &&
@@ -195,7 +194,7 @@ var Object2 = function(x, y) {
 
 // Check for collisions between player and object 2
 Object2.prototype.update = function() {
-    
+
     if (player.x < this.x + 90 &&
         player.x + 30 > this.x &&
         player.y < this.y + 20 &&
@@ -229,7 +228,7 @@ var Object3 = function(x, y) {
 
 // Check for collisions between player and object 3
 Object3.prototype.update = function() {
-    
+
     if (player.x < this.x + 90 &&
         player.x + 30 > this.x &&
         player.y < this.y + 20 &&
