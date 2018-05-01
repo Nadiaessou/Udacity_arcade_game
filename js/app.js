@@ -29,13 +29,11 @@ Enemy.prototype.update = function(dt) {
     }
 
     // check collision and play alert
-    if (player.x < this.x + 90 && player.x + 30 > this.x && player.y < this.y + 20 && player.y + 30 > this.y) {
-        player.sprite = 'images/boy2.png';
-        setTimeout (function () {
-        player.x = 200;
-        player.y = 400;
-        player.sprite = 'images/boy.png';
-        }, 500);
+    if (player.x < this.x + 90 &&
+    player.x + 30 > this.x &&
+    player.y < this.y + 20 &&
+    player.y + 30 > this.y) {
+    this.collision();
     };
 };
 
@@ -44,6 +42,16 @@ Enemy.prototype.update = function(dt) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function(dt) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// Restart the game after winning
+Enemy.prototype.collision = function() {
+        player.sprite = 'images/boy2.png';
+        setTimeout (function () {
+        player.x = 200;
+        player.y = 400;
+        player.sprite = 'images/boy.png';
+        }, 500);
 };
 
 /////////////////////////////// PLAYER //////////////////////////////////////////////////////////
@@ -81,22 +89,7 @@ Player.prototype.update = function(dt) {
         object2.x === 475 && object2.y === 496 &&
         object3.x === 520 && object3.y === 496 &&
         this.y < 0) {
-        this.y = -60;
-        player.sprite = 'images/boy-win.png';
-      setTimeout(function(){ 
-        player.x = 200;
-        player.y = 400;
-        object.x = 300;
-        object.y = 73;
-        object2.x = 100;
-        object2.y = 240;
-        object3.x = 500;
-        object3.y = 150;
-        object.sprite = 'images/object1.png';
-        object2.sprite = 'images/object2.png';
-        object3.sprite = 'images/object3.png';
-        player.sprite = 'images/boy-start.png';
-        }, 2000);
+        this.win();
     }
 };
 
@@ -106,23 +99,56 @@ Player.prototype.render = function() {
 
 
 Player.prototype.handleInput = function(keyPress) {
-    if(keyPress === 'left') {
-        this.x -= this.speed + 50;
-        this.sprite = 'images/boy-left.png';
-    }
-    if(keyPress === 'right') {
-        this.x += this.speed + 50;
-        this.sprite = 'images/boy-right.png';
-    }
-    if(keyPress === 'up') {
-        this.y -= this.speed + 27;
-        this.sprite = 'images/boy-up.png';
-    }
-    if(keyPress === 'down') {
-        this.y += this.speed + 27;
-        this.sprite = 'images/boy.png';
-    }
+          switch (keyPress) {
+              case 'left':
+                  this.x -= this.speed + 50;
+                  this.sprite = 'images/boy-left.png';
+                  break;
+              case 'right':
+                  this.x += this.speed + 50;
+                  this.sprite = 'images/boy-right.png';
+                  break;
+              case 'up':
+                  this.y -= this.speed + 27;
+                  this.sprite = 'images/boy-up.png';
+                  break;
+              case 'down':
+                  this.y += this.speed + 27;
+                  this.sprite = 'images/boy.png';
+                  break;
+          }
 };
+
+// Restart the game after winning
+Player.prototype.win = function() {
+        this.y = -60;
+        player.sprite = 'images/boy-win.png';
+        setTimeout(function(){ 
+        window.location.reload()
+        }, 2500);
+};
+
+/////////////////////////////// ARROWS BUTTON //////////////////////////////////////////////////////////
+
+function goUp() {
+    player.y -= player.speed + 27;
+    player.sprite = 'images/boy-up.png';
+}
+
+function goLeft() {
+    player.x -= player.speed + 50;
+    player.sprite = 'images/boy-left.png';
+}
+
+function goRight() {
+    player.x += player.speed + 50;
+    player.sprite = 'images/boy-right.png';
+}
+
+function goDown() {
+    player.y += player.speed + 27;
+    player.sprite = 'images/boy.png';
+}
 
 /////////////////////////////// OBJECT1 //////////////////////////////////////////////////////////
 
