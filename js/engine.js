@@ -12,7 +12,6 @@
  * This engine makes the canvas' context (ctx) object globally available to make 
  * writing app.js a little simpler to work with.
  */
-
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -90,13 +89,13 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function(car) {
-            car.update(dt);
-        });
-        player.update();
         object.update();
         object2.update();
         object3.update();
+        allEnemies.forEach(function(enemy) {
+            enemy.update(dt);
+        });
+        player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -111,19 +110,19 @@ var Engine = (function(global) {
          */
 
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 4 of stone
-                'images/stone-block.png',   // Row 2 of 4 of stone
-                'images/stone-block.png',   // Row 3 of 4 of stone
-                'images/stone-block.png',   // Row 4 of 4 of stone
-                'images/grass-block.png'    // Row 1 of 1 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 4 of stone
+                'images/stone-block.png', // Row 2 of 4 of stone
+                'images/stone-block.png', // Row 3 of 4 of stone
+                'images/stone-block.png', // Row 4 of 4 of stone
+                'images/grass-block.png' // Row 1 of 1 of grass
             ],
             numRows = 6,
             numCols = 6,
             row, col;
-        
+
         // Before drawing, clear existing canvas
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -139,7 +138,7 @@ var Engine = (function(global) {
                  * we're using them over and over.
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
-                
+
             }
         }
 
@@ -154,13 +153,13 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+        object.render();
+        object2.render();
+        object3.render();
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
         player.render();
-        object.render();
-        object2.render();
-        object3.render();
     }
 
     /* This function does nothing but it could have been a good place to
