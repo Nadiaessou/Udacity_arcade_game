@@ -30,9 +30,53 @@ ul {
 ul li {
     display: inline-block;
     margin-left: 5px;
+    line-height: 25px;
 }
 
 i {
     color: #00a1ce;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+#arrows {
+    display: none;
+}
+
+button {
+	padding: 13px 0 13px 0;
+	font:Bold 13px Arial;
+	background:#d34836;
+	color:#fff;
+	width:85px;
+	border-radius:5px;
+	border:none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.button-up {
+    margin-bottom: 10px;
+}
+
+.button-down {
+    margin-top: 10px;
+}
+
+.button-left {
+    margin-right: 30px;
+}
+
+.button-right {
+    margin-left: 30px;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1024px) {
+    #arrows {
+    display: block;
+}
 }
