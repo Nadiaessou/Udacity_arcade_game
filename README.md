@@ -7,7 +7,7 @@ You can move left, right, up and down with the keyboard arrows.
 
 The game is also responsive. You can play on tablet and smartphone with arrows buttons.
 
-You can play the game here : https://nadiaessou.github.io/project-arcade-game/
+You can play the game here : https://nadiaessou.github.io/Udacity_arcade_game/
 
 ![Demo](images/demo.png)
 
